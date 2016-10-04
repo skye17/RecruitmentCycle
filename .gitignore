@@ -1,0 +1,14 @@
+target
+
+# Intellij Idea
+*.iml
+.idea/**
+.idea
+!/.idea/copyright/
+!/.idea/vcs.xml
+/.idea_modules
+**/project/target
+**/project/project/target
+
+# WorkSheet files
+*.sc
