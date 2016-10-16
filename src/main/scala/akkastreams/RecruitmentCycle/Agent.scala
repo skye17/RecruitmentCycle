@@ -42,10 +42,3 @@ class URLAgent(urlString:String) extends Agent[String] {
 
   override def toString = pk
 }
-
-/*object test1 extends App {
-  //val initialPage = "https://en.wikipedia.org/wiki/Tinkoff"
-  val initialPage = "https://en.wikipedia.org//www.mediawiki.org/"
-  val initialAgent = new URLAgent(initialPage)
-  initialAgent.getFriends foreach println
-}*/
