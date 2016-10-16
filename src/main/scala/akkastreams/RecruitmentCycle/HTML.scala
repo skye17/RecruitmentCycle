@@ -13,7 +13,11 @@ object HTML {
   lazy val parser = (new SAXFactoryImpl).newSAXParser
 
   def load(url: URL, headers: Map[String, String] = Map.empty): Node = {
-    val conn = url.openConnection().asInstanceOf[HttpURLConnection]
+    val conn = url.openConnection() match {
+      case x: HttpURLConnection =>
+        x
+      case _ =>
+        throw new Exception("Only HTTP Method is suitable") }
     for ((k, v) <- headers)
       conn.setRequestProperty(k, v)
     val source = new InputSource(conn.getInputStream)

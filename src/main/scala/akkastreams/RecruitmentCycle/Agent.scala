@@ -34,9 +34,9 @@ class URLAgent(urlString:String) extends Agent[String] {
         if (link.startsWith("/")) baseURL + link
         else link
       }).toList
-      pageLinks
+      pageLinks.distinct
     }.map {
-      pageLinks => pageLinks.filter(_.length <= 80).map(link => new URLAgent(link))
+      pageLinks => pageLinks.filter(_.length <= 40).map(link => new URLAgent(link))
     }.getOrElse(List.empty[URLAgent])
   }
 
